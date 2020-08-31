@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
+  <ion-toolbar color="dark">
+    <ion-title color="light">
       Posts
     </ion-title>
   </ion-toolbar>
@@ -8,9 +8,9 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       
-      <ion-title size="medium">Posts</ion-title>
+      <ion-title color="light" size="Large">Posts</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -18,7 +18,7 @@
     <ion-card *ngFor="let post of posts">
       <img src="{{ post.image }}" />
       <ion-card-header>
-        <ion-card-subtitle>{{ post.publishDate }}</ion-card-subtitle>
+        <ion-card-subtitle>{{ post.publishDate | date: 'medium' }}</ion-card-subtitle>
         <ion-card-title><a href="{{post.link}}"> {{post.link}}</a></ion-card-title>
       </ion-card-header>
       <div class="ion-text-justify">&nbsp;&nbsp;{{ post.text }}</div><br><br>
