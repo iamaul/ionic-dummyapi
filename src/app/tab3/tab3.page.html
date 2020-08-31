@@ -16,8 +16,8 @@
   <ion-list>
     <div *ngIf="tags; else loading">
       <ion-item *ngFor="let tag of tags">
-        <ion-label>
-          <h3>{{ tag }} </h3>
+        <ion-label button [routerLink]="['/tabs', 'tab5', tag]">
+          {{ tag }}
         </ion-label>
       </ion-item>
     </div>

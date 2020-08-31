@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button ion-button (click)="closeModal()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>Comments</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img src="{{ avatar }}"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ firstName }}&nbsp;{{ lastName }}</h2>
+        <p>{{ message }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

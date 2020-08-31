@@ -42,10 +42,16 @@ export class ApiService {
     }).pipe(map(data => data));
   }
 
-  // getUserComments(id: string): Observable<any> {
-  //   return this.httpClient.get(`https://dummyapi.io/data/api/user/${id}/post{postId}/comment`, {
-  //     headers: {'app-id': environment.appApiId}
-  //   }).pipe(map(data => data));
-  // }
+  getPostTags(tag: string): Observable<any> {
+    return this.httpClient.get(`https://dummyapi.io/data/api/tag/${tag}/post`, {
+      headers: {'app-id': environment.appApiId}
+    }).pipe(map(data => data['data']));
+  }
+
+  getPostComments(id: string): Observable<any> {
+    return this.httpClient.get(`https://dummyapi.io/data/api/post/${id}/comment`, {
+      headers: {'app-id': environment.appApiId}
+    }).pipe(map(data => data['data']));
+  }
 }
 

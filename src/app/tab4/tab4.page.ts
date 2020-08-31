@@ -15,7 +15,7 @@ export class Tab4Page implements OnInit {
   userposts: Observable<any>;
   profile: Observable<any>;
   username: string;
-  userId: string;
+  private userId: string;
 
   constructor(private activatedRoute: ActivatedRoute, private apiService: ApiService) {}
 
