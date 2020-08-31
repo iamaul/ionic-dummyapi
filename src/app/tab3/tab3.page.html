@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tags
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="medium">Tags</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <div *ngIf="tags; else loading">
+      <ion-item *ngFor="let tag of tags">
+        <ion-label>
+          <h3>{{ tag }} </h3>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <!-- Skeleton Loading Screen -->
+  <ng-template #loading>
+    <ion-list>
+      <ion-col size="12" size-md="6" *ngFor="let number of [0,1,2,3,4]">
+        <ion-list>
+          <ion-list-header>
+            <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+          </ion-list-header>
+          <ion-item>
+            <ion-avatar slot="start">
+              <ion-skeleton-text animated></ion-skeleton-text>
+            </ion-avatar>
+            <ion-label>
+              <h3>
+                <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+              </h3>
+              <p>
+                <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+              </p>
+              <p>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-list>
+  </ng-template>
+
+  <!-- <app-explore-container name="Tab 3 page"></app-explore-container> -->
+</ion-content>

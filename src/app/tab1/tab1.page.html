@@ -1,0 +1,74 @@
+<!-- <ion-content padding class="background"></ion-content> -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <br>
+      <br>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    
+      <ion-title size="medium">User List</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+
+  <ion-content fullscreen>
+    <ion-list>
+      <div *ngIf="users; else loading">
+        <ion-item button *ngFor="let user of users" [routerLink]="['/tabs', 'tab4', user.id]">
+          <ion-avatar slot="start">
+            <img src="{{ user.picture }}">
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+            
+            <p>{{ user.email }}</p>
+          </ion-label>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <!-- Skeleton Loading Screen -->
+    <ng-template #loading>
+      <ion-list>
+        <ion-col size="12" size-md="6" *ngFor="let number of [0,1,2,3,4]">
+          <ion-list>
+            <ion-list-header>
+              <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+            </ion-list-header>
+            <ion-item>
+              <ion-avatar slot="start">
+                <ion-skeleton-text animated></ion-skeleton-text>
+              </ion-avatar>
+              <ion-label>
+                <h3>
+                  <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+                </h3>
+                <p>
+                  <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+                </p>
+                <p>
+                  <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                </p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-list>
+    </ng-template>
+  </ion-content>
+
+  <ng-template #loading>
+    <ion-spinner name="crescent"></ion-spinner>
+   </ng-template>
+
+  <!-- <app-explore-container></app-explore-container> -->
+</ion-content>
