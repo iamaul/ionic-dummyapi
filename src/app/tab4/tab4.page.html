@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
+  <ion-toolbar color="dark">
+    <ion-title color="light">
       Posts
     </ion-title>
   </ion-toolbar>
@@ -8,8 +8,8 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Profile</ion-title>
+    <ion-toolbar color="dark">
+      <ion-title color="light" size="Large">Profile</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -64,6 +64,7 @@
 
       <ion-card-content>
         <ion-icon name="heart" color="danger"></ion-icon>{{ post.likes }}
+        &nbsp;&nbsp;  <ion-icon name="mail-open" color="primary"></ion-icon>
         <br/>
         Posted by: {{ post.owner.firstName }} {{ post.owner.lastName }}
       </ion-card-content>
